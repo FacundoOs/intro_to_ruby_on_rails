@@ -10,11 +10,6 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <%= flash[:notice] %>
-      <% end %>
-      <button><%= link_to 'Back', root_path %></button>
-
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     <%= yield %>
