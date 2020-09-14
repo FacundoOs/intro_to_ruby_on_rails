@@ -1,5 +1,7 @@
 feature 'User can create articles' do
+  let(:user) {FactoryBot.create(:user)}
   before do
+    login_as(user, scope: :user)
     visit root_path
     click_on "New Article"
   end
@@ -9,7 +11,6 @@ context "Successfully create an article [Happy Path]" do
     fill_in "Title", with: "Happy holidays"
     fill_in "Content", with: "Buy your gifts now!"
     click_on "Create Article"
-
   end
 
   it 'User should be on article show page' do
